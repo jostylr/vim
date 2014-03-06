@@ -21,9 +21,15 @@ Having said that, let me go install some recently created plugins...
 * Markdown:  [Voom](https://github.com/vim-voom/VOoM) which does outlining
 * [vim-markdown](https://github.com/tpope/vim-markdown) which does github fence highlighting. A little bit of info at [Coderwall](https://coderwall.com/p/ftqcla)
 
-Tips so far:
+## Commands to use
 
-* Change directory by `:cd dir` 
+* Change directory by `:lcd dir` The lcd makes it local to the window. Thus, if you have multiple windows, you can work with multiple projects in each window.
+* More [tips](http://stackoverflow.com/questions/1276403/simple-vim-commands-you-wish-youd-known-earlier) including ctrl-q to select rectangle, shift-v to select rows, v to go into vi mode. 
+* [Selecting pasted text](http://usevim.com/2014/02/14/selecting-put-text/)
+
+
+# Setup in Vimrc
+
 * Set autoindent to on to just have indentation follow from line to line. Use CTRL-D to unindent a line. 
 * The following commands can be used to make sure one uses spaces instead of tabs: 
     set smartindent
@@ -37,7 +43,10 @@ Tips so far:
 * Searching for visually selected text [using `*`: ](http://vim.wikia.com/wiki/Search_for_visually_selected_text)
 * [Status Line](http://stackoverflow.com/questions/5375240/a-more-useful-statusline-in-vim) and  %{fugitive#statusline()} from fugitive
 * :set linebreak will wrap text in between words, then :set showbreak=>\ with a space after the slash will do a nice indent view. 
+* set dir=~/.vim/swp to keep the swap files from polluting directories.
+* set ww=<,>,[,]  to enable wrapping around when using cursor keys. do not use that with h and l because of the d3h kind of command which would then delete more than intended. I think. 
 
 ## MacVim
 
 I really wanted the Cmd-S save functionality. So after pulling my hair out trying to get it to work in iterm2, I installed MacVim. 
+
