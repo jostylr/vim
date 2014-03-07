@@ -31,8 +31,10 @@ Having said that, let me go install some recently created plugins...
 
 * [Vundle](https://github.com/gmarik/Vundle.vim)   A nice [Vundle vs Pathogen
 story](http://jameslaicreative.com/moving-up-upgrading-from-pathogen-to-vundle/)
-* Git:  Fugitive * Markdown:  [Voom](https://github.com/vim-voom/VOoM) which
-does outlining * [vim-markdown](https://github.com/tpope/vim-markdown) which
+* Git:  Fugitive 
+* Markdown:  [Voom](https://github.com/vim-voom/VOoM) which
+does outlining 
+* [vim-markdown](https://github.com/tpope/vim-markdown) which
 does github fence highlighting. A little bit of info at
 [Coderwall](https://coderwall.com/p/ftqcla)
 
@@ -43,15 +45,19 @@ you have multiple windows, you can work with multiple projects in each window.
 * More
 [tips](http://stackoverflow.com/questions/1276403/simple-vim-commands-you-wish-youd-known-earlier)
 including ctrl-q to select rectangle, shift-v to select rows, v to go into vi
-mode.  * [Selecting pasted
-text](http://usevim.com/2014/02/14/selecting-put-text/) * [Remapping
+mode.  
+* [Selecting pasted
+text](http://usevim.com/2014/02/14/selecting-put-text/) 
+* [Remapping
 keys](http://programmers.stackexchange.com/questions/42103/what-are-safe-keys-to-remap-in-vim)
 There is a list of all key maps, fairly succinct.  A nice explanation of using
 no recursive mapping so that it is only remapping key presses and not command
 expansions. The no recurse prevents inadvertent mapping errors and plugins from
-wreaking havoc.  * In normal mode, `D` deletes to end of line. This is great
+wreaking havoc.  
+* In normal mode, `D` deletes to end of line. This is great
 for editing, in my experience/way of editing. Found on [cheat
-sheet](http://www.lagmonster.org/docs/vi.html) * o and O insert lines below and
+sheet](http://www.lagmonster.org/docs/vi.html) 
+* o and O insert lines below and
 above which I find useful. Also A will go to end of line and switch to insert
 mode. this is also useful. 
 
@@ -59,22 +65,34 @@ mode. this is also useful.
 # Setup in Vimrc
 
 * Set autoindent to on to just have indentation follow from line to line. Use
-CTRL-D to unindent a line.  * The following commands can be used to make sure
-one uses spaces instead of tabs: set smartindent set tabstop=4 set shiftwidth=4
-set expandtab * Paste with appropriate indentation: ?
+CTRL-D to unindent a line.  
+* The following commands can be used to make sure
+one uses spaces instead of tabs: 
+    set smartindent 
+    set tabstop=4 set 
+    shiftwidth=4
+    set expandtab 
+* Paste with appropriate indentation: ?
 [SO](http://stackoverflow.com/questions/2514445/turning-off-auto-indent-when-pasting-text-into-vim)
-* :noh will remove the highlighting that happens with a search * Start two
-files in vertical split with   `vim -O file1 file2` * [Cheat
-Sheet](http://bullium.com/support/vim.html) * Searching for visually selected
+* :noh will remove the highlighting that happens with a search 
+* Start two
+files in vertical split with   `vim -O file1 file2` 
+* [Cheat
+Sheet](http://bullium.com/support/vim.html) 
+* Searching for visually selected
 text [using `*`: ](http://vim.wikia.com/wiki/Search_for_visually_selected_text)
 * [Status
 Line](http://stackoverflow.com/questions/5375240/a-more-useful-statusline-in-vim)
-and  %{fugitive#statusline()} from fugitive * :set linebreak will wrap text in
+and  %{fugitive#statusline()} from fugitive 
+* :set linebreak will wrap text in
 between words, then :set showbreak=>\ with a space after the slash will do a
-nice indent view.  * set dir=~/.vim/swp to keep the swap files from polluting
-directories.  * set ww=<,>,[,]  to enable wrapping around when using cursor
+nice indent view.  
+* set dir=~/.vim/swp to keep the swap files from polluting
+directories.  
+* set ww=<,>,[,]  to enable wrapping around when using cursor
 keys. do not use that with h and l because of the d3h kind of command which
-would then delete more than intended. I think.  * What about running a terminal
+would then delete more than intended. I think.  
+* What about running a terminal
 in vim?
 [SO](http://stackoverflow.com/questions/1236563/how-to-run-a-terminal-inside-of-vim),
 [No](http://vimdoc.sourceforge.net/htmldoc/tips.html#shell-window), yes
@@ -84,24 +102,35 @@ in vim?
 shell](http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window)
 * Making insert mode a bit more visible.
 [SO](http://stackoverflow.com/questions/6488683/how-do-i-change-the-vim-cursor-in-insert-normal-mode)
-and in particular: `:autocmd InsertEnter,InsertLeave * set cul!` * Changing to
+and in particular: `:autocmd InsertEnter,InsertLeave * set cul!` 
+* Changing to
 normal mode upon tab, focus lost
 [SO](http://superuser.com/questions/236534/change-to-normal-mode-when-macvim-goes-background)
-`au FocusLost,TabLeave * call feedkeys("\<C-\>\<C-n>")` * I want creating,
+`au FocusLost,TabLeave * call feedkeys("\<C-\>\<C-n>")` 
+* I want creating,
 deleting lines to work as I expect. Found [Vim
 Tips](http://vim.wikia.com/wiki/Use_Return_and_Delete_keys_in_normal_mode_like_in_insert_mode)
 I just mapped the <BS> key in normal mode to be the same as <BS> in edit mode
-and the enter as in normal while shift enter * Missing shift arrows selection,
+and the enter as in normal while shift enter 
+* Missing shift arrows selection,
 but resisting.
-[SO](http://stackoverflow.com/questions/9721732/mapping-shift-arrows-to-selecting-characters-lines)
+[SO](http://stackoverflow.com/questions/9721732/mapping-shift-arrows-to-selecting-characters-lines) 
+Does this work as expected?
 * I set textwidth to 78 and am wondering if this works. 78 is a lot of
   characters. Thinking about doing it for all markdown. wanted to make sure
-  that it seems reasonable.
+  that it seems reasonable. To do apply it retroactiely, you can select all 
+  (gg v G) and then type gq. This formats paragraphs. Note that it might 
+  become a bit of an issue. It does get a few things wrong. Perhaps adding 
+  fake newlines first might work.  
+* Some [more](http://blog.ezyang.com/2010/03/vim-textwidth/) on vim and
+  textwidth. 
+
 
 ## MacVim
 
 I really wanted the Cmd-S save functionality. So after pulling my hair out
-trying to get it to work in iterm2, I installed MacVim. 
+trying to get it to work in iterm2, I installed MacVim. It is nice.  
 
 * A way to change the tab switching prefrences
 [cmd-arrow](https://code.google.com/p/macvim/issues/detail?id=156)
+* A way to have cmd+s automatically get to normal mode. [bjorn](http://vim.1045645.n5.nabble.com/Go-to-Normal-Mode-After-Before-Save-td1215378.html). Added this to .gvimrc 
