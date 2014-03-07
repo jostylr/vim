@@ -124,7 +124,9 @@ Does this work as expected?
   fake newlines first might work.  
 * Some [more](http://blog.ezyang.com/2010/03/vim-textwidth/) on vim and
   textwidth. 
-
+* Wanted to swtich windows using tab. Also set ctl-tab to close window. 
+[Tab as switch](http://vim.wikia.com/wiki/Use_tab_key_to_switch_windows_and_current_file_path)
+   
 
 ## MacVim
 
